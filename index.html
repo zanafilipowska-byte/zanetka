@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Imię Nazwisko — Projektowanie wnętrz</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <meta name="description" content="Projektowanie wnętrz — portfolio, usługi i kontakt.">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#">Imię Nazwisko</a>
+      <nav class="nav">
+        <a href="#about">O mnie</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#contact">Kontakt</a>
+      </nav>
+      <button class="nav-toggle" aria-label="Otwórz menu">☰</button>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero / Landing -->
+    <section class="hero">
+      <div class="container hero-inner">
+        <div class="hero-text">
+          <h1>Projektuję funkcjonalne i piękne wnętrza</h1>
+          <p>Indywidualne podejście, przemyślane rozwiązania, dbałość o detale.</p>
+          <a class="btn" href="#portfolio">Zobacz portfolio</a>
+        </div>
+        <div class="hero-image" aria-hidden="true">
+          <!-- Replace with a large cover photo (optimized) -->
+          <img src="images/hero.jpg" alt="" loading="lazy">
+        </div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="about">
+      <div class="container">
+        <h2>O mnie</h2>
+        <div class="about-grid">
+          <div class="about-text">
+            <p>Cześć — jestem projektantką wnętrz z pasją do przestrzeni, które łączą funkcję i estetykę. Zajmuję się projektami mieszkań, domów i wnętrz komercyjnych — od koncepcji po nadzór wykonawczy.</p>
+            <ul>
+              <li>Projekty kompleksowe</li>
+              <li>Wizualizacje 3D</li>
+              <li>Dobór materiałów i nadzór</li>
+            </ul>
+            <a class="btn ghost" href="#contact">Umów konsultację</a>
+          </div>
+          <div class="about-photo">
+            <img src="images/about-1.jpg" alt="Zdjęcie projektantki" loading="lazy">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Portfolio -->
+    <section id="portfolio" class="portfolio">
+      <div class="container">
+        <h2>Portfolio</h2>
+        <p class="muted">Wybrane realizacje — kliknij, aby powiększyć.</p>
+
+        <div class="filters">
+          <button data-filter="all" class="active">Wszystkie</button>
+          <button data-filter="mieszkanie">Mieszkania</button>
+          <button data-filter="dom">Domy</button>
+          <button data-filter="komercyjne">Komercyjne</button>
+        </div>
+
+        <div class="gallery" id="gallery">
+          <!-- Example items: replace src + data-full with your images -->
+          <figure class="gallery-item" data-category="mieszkanie">
+            <img src="images/portfolio-1-small.jpg" data-full="images/portfolio-1.jpg" alt="Projekt 1" loading="lazy">
+          </figure>
+          <figure class="gallery-item" data-category="dom">
+            <img src="images/portfolio-2-small.jpg" data-full="images/portfolio-2.jpg" alt="Projekt 2" loading="lazy">
+          </figure>
+          <figure class="gallery-item" data-category="komercyjne">
+            <img src="images/portfolio-3-small.jpg" data-full="images/portfolio-3.jpg" alt="Projekt 3" loading="lazy">
+          </figure>
+          <!-- Dodaj więcej elementów zgodnie ze strukturą -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Lightbox (hidden) -->
+    <div id="lightbox" class="lightbox" aria-hidden="true">
+      <button class="lb-close" aria-label="Zamknij">✕</button>
+      <button class="lb-prev" aria-label="Poprzednie">◀</button>
+      <div class="lb-content">
+        <img src="" alt="">
+      </div>
+      <button class="lb-next" aria-label="Następne">▶</button>
+    </div>
+
+    <!-- Contact -->
+    <section id="contact" class="contact">
+      <div class="container">
+        <h2>Kontakt</h2>
+        <div class="contact-grid">
+          <div>
+            <h3>Skontaktuj się</h3>
+            <p>Imię Nazwisko<br>telefon: <a href="tel:+48123456789">+48 123 456 789</a><br>
+            e-mail: <a href="mailto:kontakt@example.com">kontakt@example.com</a></p>
+            <p>Social: <a href="#" target="_blank" rel="noopener">Instagram</a> · <a href="#" target="_blank" rel="noopener">Pinterest</a></p>
+          </div>
+          <form class="contact-form" action="https://formspree.io/f/your-id" method="POST">
+            <label>
+              Twoje imię
+              <input type="text" name="name" required>
+            </label>
+            <label>
+              E-mail
+              <input type="email" name="_replyto" required>
+            </label>
+            <label>
+              Wiadomość
+              <textarea name="message" rows="6" required></textarea>
+            </label>
+            <button class="btn" type="submit">Wyślij</button>
+            <p class="muted small">Możesz użyć zamiast Formspree własnego endpointu lub mailto.</p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="year"></span> Imię Nazwisko — Projektowanie wnętrz</p>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js" defer></script>
+</body>
+</html>
