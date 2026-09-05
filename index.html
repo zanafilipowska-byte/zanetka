@@ -27,7 +27,7 @@
   <main id="main">
     <section class="hero">
       <div class="hero-media" role="img" aria-label="Przykładowe wnętrze">
-        <img src="images/hero.jpg" alt="Przykładowe wnętrze" loading="lazy">
+        <img src="images/1.jpg" alt="Przytulne mieszkanie - hero" loading="lazy">
         <div class="hero-overlay"></div>
       </div>
 
@@ -61,47 +61,29 @@
 
     <section id="projects" class="projects container">
       <h2>Wybrane realizacje</h2>
-      <p class="muted">Kliknij projekt, aby zobaczyć więcej zdjęć.</p>
+      <p class="muted">Poniżej znajduje się aktualnie jedna zakończona realizacja. Pozostałe projekty pojawią się wkrótce.</p>
 
-      <div class="project-filters">
+      <div class="project-filters" aria-hidden="true">
         <button data-filter="all" class="active">Wszystkie</button>
-        <button data-filter="mieszkanie">Mieszkania</button>
-        <button data-filter="dom">Domy</button>
-        <button data-filter="komercyjne">Komercyjne</button>
       </div>
 
       <div class="masonry" id="gallery">
-        <!-- Project 1: gallery with 4 images -->
+        <!-- Project 1: Przytulne mieszkanie w kamienicy (galeria 4 zdjęć) -->
         <article class="card" data-category="mieszkanie">
-          <a href="#" class="card-link" aria-label="Otwórz galerię projektu 1">
-            <img src="images/1.jpg" data-full="images/1.jpg" alt="Projekt 1 - zdjęcie 1" loading="lazy">
+          <a href="#" class="card-link" aria-label="Otwórz galerię Przytulne mieszkanie">
+            <img src="images/1.jpg" data-full="images/1.jpg" alt="Przytulne mieszkanie - kuchnia" loading="lazy">
           </a>
           <div class="card-body">
             <h3>Przytulne mieszkanie w kamienicy</h3>
             <p class="muted small">Warszawa — 2024</p>
+            <p class="small">Zestaw zdjęć z realizacji — kuchnia, część dzienna i detale.</p>
           </div>
-          <!-- Additional gallery images for lightbox (hidden) -->
+
+          <!-- Hidden images for lightbox gallery -->
           <div class="project-gallery" style="display:none;">
-            <img src="images/2.jpg" data-full="images/2.jpg" alt="Projekt 1 - zdjęcie 2" loading="lazy">
-            <img src="images/3.jpg" data-full="images/3.jpg" alt="Projekt 1 - zdjęcie 3" loading="lazy">
-            <img src="images/4.jpg" data-full="images/4.jpg" alt="Projekt 1 - zdjęcie 4" loading="lazy">
-          </div>
-        </article>
-
-        <!-- Other projects (placeholders) -->
-        <article class="card" data-category="dom">
-          <a href="#" class="card-link" aria-label="Otwórz projekt 2"><img src="images/10.jpg" data-full="images/10.jpg" alt="Projekt 2" loading="lazy"></a>
-          <div class="card-body">
-            <h3>Nowoczesny dom pod miastem</h3>
-            <p class="muted small">Piaseczno — 2023</p>
-          </div>
-        </article>
-
-        <article class="card" data-category="komercyjne">
-          <a href="#" class="card-link" aria-label="Otwórz projekt 3"><img src="images/11.jpg" data-full="images/11.jpg" alt="Projekt 3" loading="lazy"></a>
-          <div class="card-body">
-            <h3>Wnętrze kawiarni — aranżacja</h3>
-            <p class="muted small">Kraków — 2022</p>
+            <img src="images/2.jpg" data-full="images/2.jpg" alt="Przytulne mieszkanie - widok 2" loading="lazy">
+            <img src="images/3.jpg" data-full="images/3.jpg" alt="Przytulne mieszkanie - detale" loading="lazy">
+            <img src="images/4.jpg" data-full="images/4.jpg" alt="Przytulne mieszkanie - salon" loading="lazy">
           </div>
         </article>
 

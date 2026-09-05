@@ -1,22 +1,16 @@
-Projekt 1: instrukcje dodania zdjęć i optymalizacji
+Projekt "Przytulne mieszkanie w kamienicy"
 
-Otrzymałem Twoje cztery zdjęcia i przygotowałem strukturę galerii projektu 1 (pliki oczekiwane w katalogu `images/`):
-- images/project1-1.jpg (główne)
-- images/project1-2.jpg
-- images/project1-3.jpg
-- images/project1-4.jpg
+Do repo wgrano serię zdjęć dedykowanych tej realizacji:
+- images/1.jpg (główne)
+- images/2.jpg
+- images/3.jpg
+- images/4.jpg
 
-Co zrobiłem teraz:
-- Zaktualizowałem `index.html`, aby karta "Projekt 1" używała powyższych nazw i zawierała dodatkowe, ukryte elementy galerii (używane przez lightbox).
+Uwagi:
+- Na stronie publicznej (Galeria) widoczny jest obecnie tylko ten projekt; pozostałe projekty dodasz później.
+- Jeżeli chcesz, mogę teraz wygenerować zoptymalizowane wersje (WebP + JPG 400/800/1200px) oraz uaktualnić markup do <picture> z srcset.
 
-Co muszę zrobić dalej, aby automatycznie wygenerować miniaturki i WebP oraz podmienić obrazy w repo:
-1) Prześlij oryginalne pliki (najlepiej w pełnej rozdzielczości) jedną z dwóch dróg:
-   - A: Dołącz je tutaj w wiadomości (użyj przycisku "Attach file / dołącz pliki"). Wtedy ja przygotuję:
-       • zoptymalizowane miniaturki (np. 400–800 px szerokości),
-       • wersje WebP oraz zwykłe JPG/PNG jako fallback,
-       • srcset i zaktualizuję `index.html` aby korzystał z responsywnych obrazów.
-   - B: Wgraj je do katalogu `images/` w repo (np. przez GitHub UI → Add file → Upload files). Po wgraniu daj znać — pobiorę je i przygotuję wersje zoptymalizowane oraz zaktualizuję markup.
+Co dalej możesz zrobić:
+- Potwierdź, jeśli mam zoptymalizować obrazy: odpowiedz "optymalizuj".
+- Jeśli chcesz dodać opisy alt dla zdjęć, podaj krótkie teksty do każdego pliku (1.jpg, 2.jpg, 3.jpg, 4.jpg).
 
-2) Po wygenerowaniu zoptymalizowanych plików zrobię commit + push i opublikuję zmiany (GitHub Pages).
-
-Jeżeli chcesz, mogę od razu pobrać zdjęcia, które przesłałaś w tej rozmowie — potwierdź "Pobierz z tej rozmowy" i zrobię to teraz. Jeśli wolisz dodać pliki ręcznie do repo, daj znać, gdy będą już tam.
