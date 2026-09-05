@@ -1,39 +1,12 @@
-# Szablon strony dla projektantki wnętrz
+Aktualizacja: nowy, bardziej elegancki szablon wzorowany estetyką stron architektonicznych.
 
-To prosty, responsywny szablon statyczny: landing, o mnie, portfolio (galeria), kontakt.
+Co zrobiłem:
+- Zaktualizowałem index.html, assets/css/styles.css i assets/js/main.js, aby strona miała układ "hero", sekcje usług, wybrane realizacje w masonry, o mnie i kontakt.
+- Projekt wykorzystuje neutralną paletę, serif dla nagłówków i nowoczesną siatkę obrazów.
 
-Instalacja lokalna:
-1. Skopiuj pliki do folderu projektu.
-2. Wstaw swoje zdjęcia do katalogu `images/`. Zmień nazwy w `index.html` (atrybuty `src` i `data-full`).
-3. Otwórz `index.html` w przeglądarce.
+Co możesz zrobić dalej:
+- Wgrać swoje zdjęcia do katalogu `images/` i podmienić nazwy (hero.jpg, about-1.jpg, portfolio-1.jpg, portfolio-2.jpg, portfolio-3.jpg).
+- Podmienić dane kontaktowe i action formularza.
+- Jeżeli chcesz, mogę automatycznie wygenerować zoptymalizowane miniaturki i srcset po przesłaniu oryginalnych zdjęć.
 
-Szybkie wdrożenie na GitHub Pages:
-1. Utwórz repo (np. `portfolio`), dodaj pliki i zrób commit.
-2. W ustawieniach repo: Pages -> wybierz branch `main` (lub `gh-pages`) i folder `/root` -> Save.
-3. Po chwili strona będzie dostępna pod `https://<twoj-login>.github.io/<repo>/`.
-
-Formularz kontaktowy:
-- Przykładowo podłączyłem Formspree. Zarejestruj konto na Formspree i podmień `action` w formularzu na swój endpoint.
-- Alternatywy: Netlify Forms, Backend (sendgrid/SMTP) lub prosty `mailto:`.
-
-Optymalizacja zdjęć (ważne przy dużej liczbie zdjęć):
-- Generuj wersje o różnych rozmiarach i używaj `srcset` / `picture` aby ładować odpowiedni rozmiar.
-- Konwertuj do WebP (lepsza kompresja) i zachowaj JPEG jako fallback.
-- Kompresuj narzędziami: Squoosh, ImageMagick, or jpegoptim / cwebp.
-- Lazy-loading: dodaj `loading="lazy"` (już w szablonie).
-- Rozważ hostowanie obrazów w CDN (Cloudflare Images, Cloudinary) aby odciążyć stronę i przyspieszyć dostarczanie.
-
-Dostosowanie stylu:
-- Kolory zmienisz w `:root` pliku `assets/css/styles.css`.
-- Czcionki możesz podmienić w head (`Google Fonts`) i w CSS.
-
-Dalsze usprawnienia (opcjonalnie):
-- Dodanie srcset i generowanych miniaturek.
-- Prezentacja kategorii z opisem projektu (modal z opisem).
-- Integracja z Instagram/projektem do automatycznego pobierania miniatur.
-- Dodanie CMS (np. Netlify CMS) jeśli chcesz samodzielnie dodawać projekty bez edycji kodu.
-
-Potrzebujesz, żebym:
-- Podmienił kolorystykę i dodał Twoje logo?
-- Wygenerował wersje `srcset` i prosty skrypt do tworzenia miniaturek?
-- Przygotował cały projekt w repo i wdrożył na GitHub Pages (jeśli podasz nazwę repo i chcesz aby zrobił to za Ciebie)?
+Daj znać co zmienić: kolory, odstępy, czcionki, układ galerii, czy dodać opisy projektów i przyciski "więcej".

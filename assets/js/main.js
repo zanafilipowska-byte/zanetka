@@ -1,81 +1,62 @@
-// Prosty JS: filtry galerii, lightbox, menu mobilne, year
+// JS: mobile nav, filters, simple lightbox, year
 document.addEventListener('DOMContentLoaded', () => {
-  // Year in footer
+  // Year
   const y = document.getElementById('year');
   if (y) y.textContent = new Date().getFullYear();
 
-  // Mobile menu toggle
+  // Mobile nav
   const navToggle = document.querySelector('.nav-toggle');
   const nav = document.querySelector('.nav');
   navToggle?.addEventListener('click', () => {
-    if (!nav) return;
+    const expanded = navToggle.getAttribute('aria-expanded') === 'true';
+    navToggle.setAttribute('aria-expanded', String(!expanded));
     nav.style.display = nav.style.display === 'flex' ? 'none' : 'flex';
   });
 
-  // Gallery filtering
-  const filters = document.querySelectorAll('.filters button');
-  const items = document.querySelectorAll('.gallery-item');
-  filters.forEach(btn => {
-    btn.addEventListener('click', () => {
-      filters.forEach(b=>b.classList.remove('active'));
-      btn.classList.add('active');
-      const f = btn.dataset.filter;
-      items.forEach(i => {
-        const cat = i.dataset.category || 'all';
-        i.style.display = (f === 'all' || cat === f) ? '' : 'none';
-      });
+  // Filters
+  const filters = document.querySelectorAll('.project-filters button');
+  const posts = document.querySelectorAll('.masonry .card');
+  filters.forEach(btn => btn.addEventListener('click', () => {
+    filters.forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const f = btn.dataset.filter;
+    posts.forEach(p => {
+      const cat = p.dataset.category || 'all';
+      p.style.display = (f === 'all' || cat === f) ? 'inline-block' : 'none';
     });
-  });
+  }));
 
   // Lightbox
-  const gallery = document.getElementById('gallery');
+  const galleryImgs = Array.from(document.querySelectorAll('.card img'));
   const lightbox = document.getElementById('lightbox');
   const lbImg = lightbox?.querySelector('.lb-content img');
   const closeBtn = lightbox?.querySelector('.lb-close');
   const prevBtn = lightbox?.querySelector('.lb-prev');
   const nextBtn = lightbox?.querySelector('.lb-next');
-  let galleryImgs = [];
-  let current = 0;
+  let visibleImgs = [];
+  let idx = 0;
 
-  function openLightbox(index){
-    galleryImgs = Array.from(document.querySelectorAll('.gallery-item img'))
-      .filter(i => i.closest('.gallery-item') && i.closest('.gallery-item').style.display !== 'none');
-    current = index;
-    const img = galleryImgs[current];
-    if (!img) return;
-    const full = img.dataset.full || img.src;
-    lbImg.src = full;
+  function open(i){
+    visibleImgs = Array.from(document.querySelectorAll('.masonry .card img')).filter(img => img.closest('.card') && img.closest('.card').style.display !== 'none');
+    idx = i;
+    const src = visibleImgs[idx]?.dataset.full || visibleImgs[idx]?.src;
+    if (!src) return;
+    lbImg.src = src;
     lightbox.setAttribute('aria-hidden','false');
   }
-  function closeLightbox(){ lightbox.setAttribute('aria-hidden','true'); lbImg.src = ''; }
+  function close(){ lightbox.setAttribute('aria-hidden','true'); lbImg.src = ''; }
 
-  gallery?.addEventListener('click', (e) => {
-    const img = e.target.closest('img');
-    if (!img) return;
-    const all = Array.from(document.querySelectorAll('.gallery-item img'))
-    const idx = all.indexOf(img);
-    openLightbox(idx);
+  document.querySelectorAll('.card img').forEach((img, i) => {
+    img.addEventListener('click', (e) => { e.preventDefault(); const all = Array.from(document.querySelectorAll('.card img')); open(all.indexOf(img)); });
   });
+  closeBtn?.addEventListener('click', close);
+  lightbox?.addEventListener('click', (e) => { if (e.target === lightbox) close(); });
+  prevBtn?.addEventListener('click', () => { if (!visibleImgs.length) return; idx = (idx - 1 + visibleImgs.length) % visibleImgs.length; lbImg.src = visibleImgs[idx].dataset.full || visibleImgs[idx].src; });
+  nextBtn?.addEventListener('click', () => { if (!visibleImgs.length) return; idx = (idx + 1) % visibleImgs.length; lbImg.src = visibleImgs[idx].dataset.full || visibleImgs[idx].src; });
 
-  closeBtn?.addEventListener('click', closeLightbox);
-  lightbox?.addEventListener('click', (e) => {
-    if (e.target === lightbox) closeLightbox();
-  });
-  prevBtn?.addEventListener('click', () => {
-    if (!galleryImgs.length) return;
-    current = (current - 1 + galleryImgs.length) % galleryImgs.length;
-    lbImg.src = galleryImgs[current].dataset.full || galleryImgs[current].src;
-  });
-  nextBtn?.addEventListener('click', () => {
-    if (!galleryImgs.length) return;
-    current = (current + 1) % galleryImgs.length;
-    lbImg.src = galleryImgs[current].dataset.full || galleryImgs[current].src;
-  });
-
-  // Keyboard navigation for lightbox
   document.addEventListener('keydown', (e) => {
     if (lightbox?.getAttribute('aria-hidden') === 'false') {
-      if (e.key === 'Escape') closeLightbox();
+      if (e.key === 'Escape') close();
       if (e.key === 'ArrowLeft') prevBtn?.click();
       if (e.key === 'ArrowRight') nextBtn?.click();
     }

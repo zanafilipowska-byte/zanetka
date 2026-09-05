@@ -3,138 +3,149 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Imię Nazwisko — Projektowanie wnętrz</title>
+  <title>Zaneta — Projektowanie wnętrz</title>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  <meta name="description" content="Zaneta — projektowanie wnętrz. Kompleksowe projekty mieszkań, domów i wnętrz komercyjnych.">
   <link rel="stylesheet" href="assets/css/styles.css">
-  <meta name="description" content="Projektowanie wnętrz — portfolio, usługi i kontakt.">
 </head>
 <body>
+  <a class="skip-link" href="#main">Przejdź do treści</a>
   <header class="site-header">
     <div class="container header-inner">
-      <a class="brand" href="#">Imię Nazwisko</a>
-      <nav class="nav">
+      <a class="brand" href="#">Zaneta</a>
+      <nav class="nav" aria-label="Główne">
+        <a href="#projects">Projekty</a>
+        <a href="#services">Usługi</a>
         <a href="#about">O mnie</a>
-        <a href="#portfolio">Portfolio</a>
         <a href="#contact">Kontakt</a>
       </nav>
-      <button class="nav-toggle" aria-label="Otwórz menu">☰</button>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="nav">Menu</button>
     </div>
   </header>
 
-  <main>
-    <!-- Hero / Landing -->
+  <main id="main">
     <section class="hero">
-      <div class="container hero-inner">
-        <div class="hero-text">
-          <h1>Projektuję funkcjonalne i piękne wnętrza</h1>
-          <p>Indywidualne podejście, przemyślane rozwiązania, dbałość o detale.</p>
-          <a class="btn" href="#portfolio">Zobacz portfolio</a>
+      <div class="hero-inner container">
+        <div class="hero-copy">
+          <h1>Projektuję wnętrza z wyczuciem stylu i funkcji</h1>
+          <p class="lead">Nowoczesne rozwiązania, naturalne materiały i dopracowane detale. Realizacje dla klientów indywidualnych i komercyjnych.</p>
+          <p>
+            <a class="btn" href="#contact">Umów konsultację</a>
+            <a class="btn ghost" href="#projects">Zobacz projekty</a>
+          </p>
         </div>
-        <div class="hero-image" aria-hidden="true">
-          <!-- Replace with a large cover photo (optimized) -->
-          <img src="images/hero.jpg" alt="" loading="lazy">
+        <div class="hero-media" aria-hidden="true">
+          <img src="images/hero.jpg" alt="Przykładowe wnętrze" loading="lazy">
         </div>
       </div>
     </section>
 
-    <!-- About -->
-    <section id="about" class="about">
-      <div class="container">
-        <h2>O mnie</h2>
-        <div class="about-grid">
-          <div class="about-text">
-            <p>Cześć — jestem projektantką wnętrz z pasją do przestrzeni, które łączą funkcję i estetykę. Zajmuję się projektami mieszkań, domów i wnętrz komercyjnych — od koncepcji po nadzór wykonawczy.</p>
-            <ul>
-              <li>Projekty kompleksowe</li>
-              <li>Wizualizacje 3D</li>
-              <li>Dobór materiałów i nadzór</li>
-            </ul>
-            <a class="btn ghost" href="#contact">Umów konsultację</a>
+    <section id="services" class="services container">
+      <h2>Usługi</h2>
+      <div class="services-grid">
+        <div class="service">
+          <h3>Projekty kompleksowe</h3>
+          <p>Projekt koncepcyjny, dokumentacja wykonawcza, nadzór autorski — wszystko w jednym pakiecie.</p>
+        </div>
+        <div class="service">
+          <h3>Wizualizacje</h3>
+          <p>Fotorealistyczne wizualizacje 3D pomagające zobaczyć efekt jeszcze przed realizacją.</p>
+        </div>
+        <div class="service">
+          <h3>Dobór materiałów</h3>
+          <p>Materiały, kolorystyka i wyposażenie dobrane tak, żeby służyć latami.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="projects container">
+      <h2>Wybrane realizacje</h2>
+      <p class="muted">Kliknij projekt, aby zobaczyć więcej zdjęć.</p>
+
+      <div class="project-filters">
+        <button data-filter="all" class="active">Wszystkie</button>
+        <button data-filter="mieszkanie">Mieszkania</button>
+        <button data-filter="dom">Domy</button>
+        <button data-filter="komercyjne">Komercyjne</button>
+      </div>
+
+      <div class="masonry" id="gallery">
+        <article class="card" data-category="mieszkanie">
+          <a href="#" class="card-link"><img src="images/portfolio-1.jpg" data-full="images/portfolio-1.jpg" alt="Projekt 1" loading="lazy"></a>
+          <div class="card-body">
+            <h3>Przytulne mieszkanie w kamienicy</h3>
+            <p class="muted small">Warszawa — 2024</p>
           </div>
-          <div class="about-photo">
-            <img src="images/about-1.jpg" alt="Zdjęcie projektantki" loading="lazy">
+        </article>
+
+        <article class="card" data-category="dom">
+          <a href="#" class="card-link"><img src="images/portfolio-2.jpg" data-full="images/portfolio-2.jpg" alt="Projekt 2" loading="lazy"></a>
+          <div class="card-body">
+            <h3>Nowoczesny dom pod miastem</h3>
+            <p class="muted small">Piaseczno — 2023</p>
           </div>
-        </div>
-      </div>
-    </section>
+        </article>
 
-    <!-- Portfolio -->
-    <section id="portfolio" class="portfolio">
-      <div class="container">
-        <h2>Portfolio</h2>
-        <p class="muted">Wybrane realizacje — kliknij, aby powiększyć.</p>
-
-        <div class="filters">
-          <button data-filter="all" class="active">Wszystkie</button>
-          <button data-filter="mieszkanie">Mieszkania</button>
-          <button data-filter="dom">Domy</button>
-          <button data-filter="komercyjne">Komercyjne</button>
-        </div>
-
-        <div class="gallery" id="gallery">
-          <!-- Example items: replace src + data-full with your images -->
-          <figure class="gallery-item" data-category="mieszkanie">
-            <img src="images/portfolio-1-small.jpg" data-full="images/portfolio-1.jpg" alt="Projekt 1" loading="lazy">
-          </figure>
-          <figure class="gallery-item" data-category="dom">
-            <img src="images/portfolio-2-small.jpg" data-full="images/portfolio-2.jpg" alt="Projekt 2" loading="lazy">
-          </figure>
-          <figure class="gallery-item" data-category="komercyjne">
-            <img src="images/portfolio-3-small.jpg" data-full="images/portfolio-3.jpg" alt="Projekt 3" loading="lazy">
-          </figure>
-          <!-- Dodaj więcej elementów zgodnie ze strukturą -->
-        </div>
-      </div>
-    </section>
-
-    <!-- Lightbox (hidden) -->
-    <div id="lightbox" class="lightbox" aria-hidden="true">
-      <button class="lb-close" aria-label="Zamknij">✕</button>
-      <button class="lb-prev" aria-label="Poprzednie">◀</button>
-      <div class="lb-content">
-        <img src="" alt="">
-      </div>
-      <button class="lb-next" aria-label="Następne">▶</button>
-    </div>
-
-    <!-- Contact -->
-    <section id="contact" class="contact">
-      <div class="container">
-        <h2>Kontakt</h2>
-        <div class="contact-grid">
-          <div>
-            <h3>Skontaktuj się</h3>
-            <p>Imię Nazwisko<br>telefon: <a href="tel:+48123456789">+48 123 456 789</a><br>
-            e-mail: <a href="mailto:kontakt@example.com">kontakt@example.com</a></p>
-            <p>Social: <a href="#" target="_blank" rel="noopener">Instagram</a> · <a href="#" target="_blank" rel="noopener">Pinterest</a></p>
+        <article class="card" data-category="komercyjne">
+          <a href="#" class="card-link"><img src="images/portfolio-3.jpg" data-full="images/portfolio-3.jpg" alt="Projekt 3" loading="lazy"></a>
+          <div class="card-body">
+            <h3>Wnętrze kawiarni — aranżacja</h3>
+            <p class="muted small">Kraków — 2022</p>
           </div>
-          <form class="contact-form" action="https://formspree.io/f/your-id" method="POST">
-            <label>
-              Twoje imię
-              <input type="text" name="name" required>
-            </label>
-            <label>
-              E-mail
-              <input type="email" name="_replyto" required>
-            </label>
-            <label>
-              Wiadomość
-              <textarea name="message" rows="6" required></textarea>
-            </label>
-            <button class="btn" type="submit">Wyślij</button>
-            <p class="muted small">Możesz użyć zamiast Formspree własnego endpointu lub mailto.</p>
-          </form>
+        </article>
+
+        <!-- More items as needed (replace images) -->
+      </div>
+    </section>
+
+    <section id="about" class="about container">
+      <div class="about-grid">
+        <div>
+          <h2>O mnie</h2>
+          <p class="lead">Jestem Zaneta — projektantka wnętrz. Współpracuję z klientami, którzy cenią spójność stylu, wygodę użytkowania i wysoką jakość wykonania.</p>
+          <p>Każdy projekt zaczynam od rozmowy i analizy potrzeb, a następnie przygotowuję koncepcję, wizualizacje i dokumentację. Obecna oferta obejmuje także nadzór autorski i pomoc w doborze wykonawców.</p>
+          <p><a class="btn" href="#contact">Skontaktuj się</a></p>
+        </div>
+        <div class="about-photo">
+          <img src="images/about-1.jpg" alt="Zdjęcie projektantki" loading="lazy">
         </div>
       </div>
     </section>
+
+    <section id="contact" class="contact container">
+      <h2>Kontakt</h2>
+      <div class="contact-grid">
+        <div class="contact-info">
+          <p>Zaneta — projektowanie wnętrz<br>
+          tel: <a href="tel:+48123456789">+48 123 456 789</a><br>
+          e-mail: <a href="mailto:kontakt@example.com">kontakt@example.com</a></p>
+          <p class="muted">Social: <a href="#">Instagram</a> · <a href="#">Pinterest</a></p>
+        </div>
+
+        <form class="contact-form" action="https://formspree.io/f/your-id" method="POST" aria-label="Formularz kontaktowy">
+          <label>Twoje imię<input type="text" name="name" required></label>
+          <label>E-mail<input type="email" name="_replyto" required></label>
+          <label>Wiadomość<textarea name="message" rows="6" required></textarea></label>
+          <button class="btn" type="submit">Wyślij</button>
+        </form>
+      </div>
+    </section>
+
   </main>
 
   <footer class="site-footer">
-    <div class="container">
-      <p>© <span id="year"></span> Imię Nazwisko — Projektowanie wnętrz</p>
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> Zaneta — Projektowanie wnętrz</p>
     </div>
   </footer>
+
+  <div id="lightbox" class="lightbox" aria-hidden="true">
+    <button class="lb-close" aria-label="Zamknij">✕</button>
+    <div class="lb-content"><img src="" alt=""></div>
+    <button class="lb-prev" aria-label="Poprzednie">◀</button>
+    <button class="lb-next" aria-label="Następne">▶</button>
+  </div>
 
   <script src="assets/js/main.js" defer></script>
 </body>
