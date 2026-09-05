@@ -5,16 +5,16 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Zaneta — Projektowanie wnętrz</title>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
   <meta name="description" content="Zaneta — projektowanie wnętrz. Kompleksowe projekty mieszkań, domów i wnętrz komercyjnych.">
   <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
   <a class="skip-link" href="#main">Przejdź do treści</a>
-  <header class="site-header">
+  <header class="site-header" id="site-header">
     <div class="container header-inner">
       <a class="brand" href="#">Zaneta</a>
-      <nav class="nav" aria-label="Główne">
+      <nav class="nav" aria-label="Główne" id="nav">
         <a href="#projects">Projekty</a>
         <a href="#services">Usługi</a>
         <a href="#about">O mnie</a>
@@ -26,18 +26,18 @@
 
   <main id="main">
     <section class="hero">
-      <div class="hero-inner container">
-        <div class="hero-copy">
-          <h1>Projektuję wnętrza z wyczuciem stylu i funkcji</h1>
-          <p class="lead">Nowoczesne rozwiązania, naturalne materiały i dopracowane detale. Realizacje dla klientów indywidualnych i komercyjnych.</p>
-          <p>
-            <a class="btn" href="#contact">Umów konsultację</a>
-            <a class="btn ghost" href="#projects">Zobacz projekty</a>
-          </p>
-        </div>
-        <div class="hero-media" aria-hidden="true">
-          <img src="images/hero.jpg" alt="Przykładowe wnętrze" loading="lazy">
-        </div>
+      <div class="hero-media" role="img" aria-label="Przykładowe wnętrze">
+        <img src="images/hero.jpg" alt="Przykładowe wnętrze" loading="lazy">
+        <div class="hero-overlay"></div>
+      </div>
+
+      <div class="hero-copy container">
+        <h1>Projektuję wnętrza z wyczuciem stylu i funkcji</h1>
+        <p class="lead">Nowoczesne rozwiązania, naturalne materiały i dopracowane detale. Realizacje dla klientów indywidualnych i komercyjnych.</p>
+        <p>
+          <a class="btn" href="#contact">Umów konsultację</a>
+          <a class="btn ghost" href="#projects">Zobacz projekty</a>
+        </p>
       </div>
     </section>
 
@@ -72,7 +72,7 @@
 
       <div class="masonry" id="gallery">
         <article class="card" data-category="mieszkanie">
-          <a href="#" class="card-link"><img src="images/portfolio-1.jpg" data-full="images/portfolio-1.jpg" alt="Projekt 1" loading="lazy"></a>
+          <a href="#" class="card-link" aria-label="Otwórz projekt 1"><img src="images/portfolio-1.jpg" data-full="images/portfolio-1.jpg" alt="Projekt 1" loading="lazy"></a>
           <div class="card-body">
             <h3>Przytulne mieszkanie w kamienicy</h3>
             <p class="muted small">Warszawa — 2024</p>
@@ -80,7 +80,7 @@
         </article>
 
         <article class="card" data-category="dom">
-          <a href="#" class="card-link"><img src="images/portfolio-2.jpg" data-full="images/portfolio-2.jpg" alt="Projekt 2" loading="lazy"></a>
+          <a href="#" class="card-link" aria-label="Otwórz projekt 2"><img src="images/portfolio-2.jpg" data-full="images/portfolio-2.jpg" alt="Projekt 2" loading="lazy"></a>
           <div class="card-body">
             <h3>Nowoczesny dom pod miastem</h3>
             <p class="muted small">Piaseczno — 2023</p>
@@ -88,14 +88,13 @@
         </article>
 
         <article class="card" data-category="komercyjne">
-          <a href="#" class="card-link"><img src="images/portfolio-3.jpg" data-full="images/portfolio-3.jpg" alt="Projekt 3" loading="lazy"></a>
+          <a href="#" class="card-link" aria-label="Otwórz projekt 3"><img src="images/portfolio-3.jpg" data-full="images/portfolio-3.jpg" alt="Projekt 3" loading="lazy"></a>
           <div class="card-body">
             <h3>Wnętrze kawiarni — aranżacja</h3>
             <p class="muted small">Kraków — 2022</p>
           </div>
         </article>
 
-        <!-- More items as needed (replace images) -->
       </div>
     </section>
 
@@ -139,6 +138,8 @@
       <p>© <span id="year"></span> Zaneta — Projektowanie wnętrz</p>
     </div>
   </footer>
+
+  <button id="back-to-top" class="back-to-top" aria-label="Wróć do góry">↑</button>
 
   <div id="lightbox" class="lightbox" aria-hidden="true">
     <button class="lb-close" aria-label="Zamknij">✕</button>
